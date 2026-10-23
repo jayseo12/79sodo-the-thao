@@ -31,7 +31,7 @@
       --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-heading: 'Barlow Condensed', 'Montserrat', sans-serif;
 
-      /* Bảng màu 79SODO: Đỏ, Vàng Kim, Đen, Trắng */
+    
       --primary: #e60000;      /* Đỏ rực rỡ */
       --primary-2: #b30000;    /* Đỏ đô đậm */
       --accent: #ffcc00;       /* Vàng kim */
@@ -429,8 +429,40 @@
     }
     footer { background: #000000; color: rgba(255, 255, 255, 0.5); padding: 24px 0; font-size: 13px; border-top: 1px solid #330000; }
     .footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
-
-    /* ANIMATION */
+     
+    .text-links-section {
+      background: #031409;
+      padding: 40px 0;
+      border-top: 1px solid rgba(0, 168, 89, 0.2);
+    }
+    .text-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      align-items: center;
+    }
+    .text-link-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.03);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .text-link-item:hover {
+      border-color: var(--primary-2);
+      color: #fff;
+      background: rgba(255, 123, 0, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 123, 0, 0.2);
+    }
+  
     [data-reveal] {
       opacity: 0; transform: translateY(30px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -570,6 +602,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn btn-primary js-link js-text" data-key="footerCta.btn" data-link="register" style="position: relative; z-index: 2;" href="#">ĐĂNG KÝ NGAY <span>↗</span></a>
       </div>
     </section>
+    <section class="text-links-section">
+      <div class="container">
+        <div class="text-links-list" id="textLinksList"></div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -593,9 +630,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       /* TOÀN BỘ LINK CTA */
       links: {
-        register: "https://tinyurl.com/pagesdev",
-        login: "https://tinyurl.com/pagesdev",
-        detail: "https://tinyurl.com/pagesdev",
+        register: "https://choitic88.world/pagesdev",
+        login: "https://choitic88.world/pagesdev",
+        detail: "https://choitic88.world/pagesdev",
       },
 
       /* TOÀN BỘ HÌNH ẢNH VÀ NỀN */
@@ -678,6 +715,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         { name: "Tiến Đạt", role: "Hội viên VIP", avatar: "TĐ", quote: "Tông màu đỏ vàng của 79SODO rất rực rỡ và sang trọng. Kèo thể thao 79SODO thì cực chuẩn, dễ chơi dễ trúng.", stars: 5 },
         { name: "Thành Long", role: "Cao thủ soi kèo", avatar: "TL", quote: "Tôi luôn ưu tiên cược bóng đá tại 79SODO vì nạp rút sòng phẳng, kèo lên sớm và không bao giờ giật lag.", stars: 5 },
         { name: "Quang Huy", role: "Thành viên thân thiết", avatar: "QH", quote: "Từ ngày chơi thể thao 79SODO tôi hoàn toàn yên tâm. Ưu đãi nhiều mà chăm sóc khách hàng lại rất chu đáo.", stars: 5 }
+      ],
+      textLinks: [
+        { text: "TIC88", url: "https://kerckewijck.nl/" },
+        { text: "789BET", url: "https://aanbestedingai.nl/" },
+        { text: "Jun88", url: "https://productfeedtool.nl" },
+        { text: "Hi88", url: "https://kakahoki.it.com/" },
+        { text: "NEW88", url: "https://dohistory.it.com/" },
+        { text: "Jun88", url: "https://sandystrang.com/" },
+        { text: "78Win", url: "https://silentgpt.it.com/" },
+        { text: "79SODO", url: "https://nepgeldkopen.nl/" },
+        { text: "F8BET", url: "https://azmip.it.com/" },
+        { text: "Jun88", url: "https://kemono.it.com/" },
+        { text: "78Win", url: "https://urnique.nl/" },
+        { text: "79SODO", url: "https://bitfiringcasino.nl/" },
+        { text: "F8BET", url: "https://gresiktoto.it.com/" },
+        { text: "78Win", url: "https://foul.it.com/" },
+        { text: "79SODO", url: "https://slotmancasino.nl/" },
+        { text: "F8BET", url: "https://eakersathome.nl/" }
       ]
     };
 
@@ -796,7 +851,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       applyLinks(gameGrid);
     }
 
-    /* Render Reasons Grid */
+
     const reasonGrid = $("#reasonGrid");
     if(reasonGrid) {
       reasonGrid.innerHTML = SITE_CONFIG.reasons.map(reason => `
@@ -808,7 +863,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       `).join("");
     }
 
-    /* Render Reviews Grid */
+
     const reviewGrid = $("#reviewGrid");
     if(reviewGrid) {
       reviewGrid.innerHTML = SITE_CONFIG.reviews.map(review => `
@@ -841,8 +896,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       el.style.transitionDelay = ((index % 4) * 70) + "ms";
       observer.observe(el);
     });
+      const textLinksList = $("#textLinksList");
+    if (textLinksList && SITE_CONFIG.textLinks) {
+      textLinksList.innerHTML = SITE_CONFIG.textLinks.map(link => `
+        <a class="text-link-item" href="${link.url || '#'}" target="_blank" rel="noopener noreferrer">${link.text}</a>
+      `).join("");
+    }
 
-    /* Set current year */
     const yearEl = $("#year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   </script>
